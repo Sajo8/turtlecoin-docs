@@ -85,7 +85,6 @@ class Index extends React.Component {
 
     const Block = props => (
       <Container
-        padding={['bottom', 'top']}
         id={props.id}
         background={props.background}>
         <GridBlock
@@ -96,11 +95,11 @@ class Index extends React.Component {
       </Container>
     );
 
-    const QuickNav = () => (
-      <Block layout="fourColumn">
+    const QuickNav1 = () => (
+      <Block layout="threeColumn">
         {[
           {
-            content: 'Learn more about TurtleCoin and the community	',
+            content: 'Learn more about TurtleCoin and the community',
             image: `${baseUrl}img/undraw_community.svg`,
             imageAlign: 'top',
             title: `<a href=${docUrl("about/About-TurtleCoin")}>About TurtleCoin</a>`,
@@ -116,17 +115,29 @@ class Index extends React.Component {
             image: `${baseUrl}img/undraw_monitor.svg`,
             imageAlign: 'top',
             title: `<a href=${docUrl("guides/mining/Mining")}>Mine TurtleCoin</a>`,
-          },
+          }
+        ]}
+      </Block>
+    );
+    const QuickNav2 = () => (
+      <Block layout="twoColumn">
+        {[
           {
             content: 'Information on contributing to TurtleCoin',
             image: `${baseUrl}img/undraw_contribute.svg`,
             imageAlign: 'top',
             title: `<a href=${docUrl("about/Contributing")}>Contributing</a>`,
+          },
+          {
+            content: 'See answers to questions asked often',
+            image: `${baseUrl}img/undraw_faq.svg`,
+            imageAlign: 'top',
+            title: `<a href=${docUrl("Frequently-Asked-Questions")}>Frequently Asked Questions</a>`,
           }
         ]}
       </Block>
     );
-    
+      
     const About1 = () => (
       <Block background="light">
         {[
@@ -158,8 +169,8 @@ class Index extends React.Component {
         {[
           {
             content:
-              `<MarkdownBlock> Come join us on [Discord](http://chat.turtlecoin.lol) or [Reddit](https://reddit.com/r/trtl)</MarkdownBlock>`,
-            image: `${baseUrl}img/undraw_questions.svg`,
+              `<MarkdownBlock> Come join us on [Discord](http://chat.turtlecoin.lol)! </MarkdownBlock>`,
+            image: `${baseUrl}img/undraw_help.svg`,
             imageAlign: 'right',
             title: `Have Questions or Need Help?`,
           },
@@ -171,7 +182,9 @@ class Index extends React.Component {
       <div>
         <HomeSplash siteConfig={siteConfig} language={language} />
         <div className="mainContainer">
-          <QuickNav />
+          <QuickNav1 />
+          <br />
+          <QuickNav2 />
           <About1 />
           <About2 />
           <About3 />
